@@ -1,0 +1,14 @@
+<pesades>
+    <pesada>
+       <lot>0</lot>
+       <num_pesada>11694</num_pesada>
+       <errors>8</errors>
+       <fora_rang>3</fora_rang>
+       <dades_animals>
+           <num_animals>11683</num_animals>
+           <mitjana>0.00025</mitjana>
+           <mediana>2.763</mediana>
+           <desviacio_tipica>2.908</desviacio_tipica>
+       </dades_animals>
+    </pesada>
+</pesades>
