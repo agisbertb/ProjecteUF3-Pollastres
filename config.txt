@@ -1,0 +1,6 @@
+noprocessats/
+processats/
+generats/
+1.5
+4.0
+2023/04/21
