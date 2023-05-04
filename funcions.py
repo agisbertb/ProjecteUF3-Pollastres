@@ -1,25 +1,40 @@
 import os
 from pathlib import Path
 from datetime import *
+import math
+files = []
+lot = 0
+config = open('config.txt', 'r')
+config_vars = config.readlines()
 
+#Lista de archivos en el directorio no processats
+def get_files():
+    global files
+    for file in os.listdir("noprocessats"):
+        if file.endswith(".txt"):
+            files.append(file)
+    return files
 
-def data_file():
-    today = datetime.date.today()
-    yesterday = today - datetime.timedelta(days=1)
-    yesterday_str = yesterday.strftime("%Y%m%d")
-    return yesterday_str
-print(data_file())
+#Data d'ahir
+def ahir():
+    today = date.today()
+    yesterday = today - timedelta(days = 1)
+    return yesterday.strftime("%Y%m%d")
+print(ahir())
 
 def get_file_number(filename):
     global lot
     parts = filename.split("_")
     lot = parts[1].split(".")[0]
     return lot
-print(get_file_number("20230421_01.txt"))
-
 
 def get_file_date(filename):
     parts = filename.split("_")
     date = parts[0]
     return date
-print(get_file_date("20230421_01.txt"))
+
+
+
+
+
+  

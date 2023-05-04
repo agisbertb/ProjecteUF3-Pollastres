@@ -1,4 +1,16 @@
-resultat = open('resultat.xml', 'w')
+from funcions import *
+lot = 0
+total = 0
+valid = 0
+invalid = 0
+rangsino = 0
+mitjana = 0
+pesosvalids = []
+mediana = 0
+
+
+
+resultat = open('generats/resultat.xml', 'w')
 
 #Añadir etiquetas al xml
 resultat.write("<pesades>\n")
