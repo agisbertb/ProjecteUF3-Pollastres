@@ -1,17 +1,17 @@
 import os
 from pathlib import Path
-from datetime import date
-import math
+from datetime import *
 
-def data_file_ayer():
-    ayer = date.today()
-    ayer = ayer.strftime("%Y%m%d")
-    ayer = int(ayer)
-    ayer = ayer - 1
-    return ayer
-print(data_file_ayer())
+
+def data_file():
+    today = datetime.date.today()
+    yesterday = today - datetime.timedelta(days=1)
+    yesterday_str = yesterday.strftime("%Y%m%d")
+    return yesterday_str
+print(data_file())
 
 def get_file_number(filename):
+    global lot
     parts = filename.split("_")
     lot = parts[1].split(".")[0]
     return lot
@@ -23,4 +23,3 @@ def get_file_date(filename):
     date = parts[0]
     return date
 print(get_file_date("20230421_01.txt"))
-
