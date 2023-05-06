@@ -163,7 +163,6 @@ def mover():
     for file in nom_valids:
         Path('noprocessats/'+file).rename(parametres(1).rstrip()+"/"+file)
 
-
-
+mover()
 
 
