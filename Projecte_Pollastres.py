@@ -131,13 +131,8 @@ def generar():
         xml = generarXML(lot,   "lot")+generarXML(total,"num_pesades")+generarXML(invalid,"errors_pesada")+generarXML(rangsino,"fora_range")+xml
         xml = "<pesada>\n"+xml+"</pesada>\n"
         pesades.append(xml)
-        print(valid)
-
 
 generar()
-
-
-
 
 def pesades_xml():
     for pesada in pesades:
