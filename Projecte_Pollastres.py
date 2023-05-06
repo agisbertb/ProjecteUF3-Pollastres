@@ -84,12 +84,11 @@ def generarXML(valor,etiqueta):
     return "<"+etiqueta+">"+str(valor)+"</"+etiqueta+">\n"
 
 def generar():
+    global total
     for file in nom_valids:
         lot = lot_fitxer(file)
         file = open('noprocessats/'+file, 'r')
         lines = file.readlines()
-        global total
-        total = len(lines)
         global valid
         valid = 0
         global invalid
@@ -106,34 +105,39 @@ def generar():
         global xml
         global pesades
         xml = ""
+        total += len(lines)
         for line in lines:
             try:
                 num_pesades = +1
                 float(line)
-                valid += 1
                 pesosvalids.append(float(line))
                 pollos += float(line)
                 if float(line) < float(config_vars[3]) or float(line) > float(config_vars[4]):
                     rangsino += 1
             except ValueError:
                 invalid += 1
+        valid = total - invalid
         mitjana = pollos/valid
         mitjana = str(mitjana)
         mitjana = mitjana[0:7]
         mitjana = float(mitjana)
         med()
         desv()
-        xml = generarXML(   total,"num_pesades")
+        xml = generarXML(valid,"num_animals")
         xml += generarXML(  mitjana,"mitja")
         xml += generarXML(mediana,"mediana")
         xml += generarXML(desviacio,"desviacio_tipica")
         xml = "<dades_animals>\n"+xml+"</dades_animals>\n"
-        xml = generarXML(lot,   "lot")+generarXML(num_pesades,"num_animals")+generarXML(invalid,"errors_pesada")+generarXML(rangsino,"fora_range")+xml
+        xml = generarXML(lot,   "lot")+generarXML(total,"num_pesades")+generarXML(invalid,"errors_pesada")+generarXML(rangsino,"fora_range")+xml
         xml = "<pesada>\n"+xml+"</pesada>\n"
         pesades.append(xml)
+        print(valid)
 
 
 generar()
+
+
+
 
 def pesades_xml():
     for pesada in pesades:
@@ -159,7 +163,6 @@ def mover():
     for file in nom_valids:
         Path('noprocessats/'+file).rename(parametres(1).rstrip()+"/"+file)
 
-mover()
 
 
 
