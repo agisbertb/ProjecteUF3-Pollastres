@@ -1,7 +1,7 @@
 <h1 align="center"> Projecte UF3 - Bàscula de Pollastres </h1>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/91249151/231252523-faec4f27-a0c4-462e-aeee-0a6ab7075090.png">
+  <img src="https://user-images.githubusercontent.com/91249151/236697904-005ae6f5-3f82-408e-b2c2-f8daa70bdece.jpg">
 </p>
 
 ## Taula de continguts 📑
@@ -9,7 +9,6 @@
 - [Requisits💻](#requisits)
 - [Guia usuari📖](#guia-usuari)
 - [Autors👨🏿👨🏻](#autors)
-
 
 ## Descripció🔍
 ---
