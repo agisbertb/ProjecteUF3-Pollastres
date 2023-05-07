@@ -116,7 +116,7 @@ def generar():
                     rangsino += 1
             except ValueError:
                 invalid += 1
-        valid = total - invalid
+        valid = total - invalid - rangsino
         mitjana = pollos/valid
         mitjana = str(mitjana)
         mitjana = mitjana[0:7]
