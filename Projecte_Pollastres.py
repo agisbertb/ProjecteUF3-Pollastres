@@ -2,6 +2,8 @@ import os
 from pathlib import Path
 from datetime import *
 import math
+from tqdm import tqdm
+
 files = []
 lot = 0
 total = 0
@@ -26,7 +28,7 @@ config.close()
 def parametres(num):
     return str(config_vars[num])
 
-#Lista de archivos en el directorio no processats
+# Llista d'arxius al directori no processats
 def get_files():
     global files
     for file in os.listdir(parametres(0).rstrip()):
@@ -85,7 +87,7 @@ def generarXML(valor,etiqueta):
 
 def generar():
     global total
-    for file in nom_valids:
+    for file in tqdm(nom_valids, desc="Processant fitxers", unit=" fitxer"): # Afegim la barra de progrés
         lot = lot_fitxer(file)
         file = open('noprocessats/'+file, 'r')
         lines = file.readlines()
